@@ -3,8 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<form class="weather-form">
+  <div>
+    <label for="latitude">Широта</label>
+    <input type="number" class="weather-input" name="latitude" id="latitude" value="56.7431">
+  </div>
+  <div>
+    <label for="longitude">Долгота</label>
+    <input type="number" class="weather-input" name="longitude" id="longitude" value="60.8027">
+  </div>
+  <input type="submit" value="Показать погоду">
+</form>
+<div class="weather-container">
+  <div class="weather-block-row">
+    <img src="" alt="" id="weather-img">
+    <div class="weather-block-col">
+      <p id="temperature">232</p>
+      <p id="request-time"></p>
+    </div>
+  </div>
+  <div class="weather-block-col">
+    <p id="feels-like">231</p>
+    <p id="humidity">3123</p>
+    <p id="wind-speed">31231</p>
+  </div>
+
+</div>
+<script src="js/script.js"></script>
 </body>
 </html>

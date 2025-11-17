@@ -1,1 +1,1 @@
-[V](https://xrystiklk.github.io/WeatherApp/)
+https://xrystiklk.github.io/WeatherApp/

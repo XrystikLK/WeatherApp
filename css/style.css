@@ -12,16 +12,39 @@ body{
     height: 100vh;
 }
 .weather-container{
-    margin-top: 25px;
     display: none;
+}
+.weather-info-block{
+    margin-top: 25px;
     background-color: gray;
     max-width: 550px;
     justify-content: space-between;
     border-radius: 15px;
+    position: relative;
+    display: flex;
+}
+.weather-map-block{
+    display: none;
 }
 .weather-block-row{
     display: flex;
 }
 .weather-block-col{
+    padding-right: 15px;
+}
+#map {
+    width: 550px;
+    height: 320px;
+    border-radius: 4px;
+    box-shadow: 0 0 1px #222;
+}
+
+.show-map{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.feels-like{
 
 }

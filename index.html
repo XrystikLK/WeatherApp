@@ -7,35 +7,65 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossorigin=""></script>
 </head>
 <body>
 
 <form class="weather-form">
   <div>
     <label for="latitude">Широта</label>
-    <input type="number" class="weather-input" name="latitude" id="latitude" value="56.7431">
+    <input type="number" class="weather-input" name="latitude" id="latitude" step="any" min="-90" max="90" required>
   </div>
   <div>
     <label for="longitude">Долгота</label>
-    <input type="number" class="weather-input" name="longitude" id="longitude" value="60.8027">
+    <input type="number" class="weather-input" name="longitude" id="longitude" step="any" min="-180" max="180" required>
   </div>
   <input type="submit" value="Показать погоду">
 </form>
 <div class="weather-container">
-  <div class="weather-block-row">
-    <img src="" alt="" id="weather-img">
-    <div class="weather-block-col">
-      <p id="temperature">232</p>
-      <p id="request-time"></p>
+  <div class="weather-info-block">
+    <div class="weather-block-row">
+      <img src="" alt="" class="weather-img">
+      <div class="weather-block-col">
+        <p class="temperature">232</p>
+        <p class="request-time"></p>
+      </div>
     </div>
+    <div class="weather-block-col">
+      <p class="feels-like">231</p>
+      <p class="humidity">3123</p>
+      <p class="wind-speed">31231</p>
+    </div>
+    <button class="add-widget">+</button>
+    <button class="show-map">Показать на карте</button>
   </div>
-  <div class="weather-block-col">
-    <p id="feels-like">231</p>
-    <p id="humidity">3123</p>
-    <p id="wind-speed">31231</p>
-  </div>
+  <div class="weather-map-block">
 
+  </div>
 </div>
-<script src="js/script.js"></script>
+<div id="map" style="visibility: hidden"></div>
+<div class="weather-widgets">
+</div>
+<!-- скрипт карты -->
+
+<!--<script>-->
+<!--    // 1. Создаем объект карты-->
+<!--    const map = L.map('map').setView([56.7431, 60.8027], 13); // Используем координаты по умолчанию из формы-->
+
+<!--    // 2. Добавляем слой тайлов-->
+<!--    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {-->
+<!--        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'-->
+<!--    }).addTo(map);-->
+
+<!--    // Опционально: Добавьте маркер на начальную точку-->
+<!--    L.marker([56.7431, 60.8027]).addTo(map)-->
+<!--        .bindPopup("Екатеринбург").openPopup();-->
+<!--</script>-->
+<script src="js/script.js" type="module"></script>
 </body>
 </html>

@@ -29,7 +29,6 @@ weatherForm.addEventListener('submit', async (event) => {
     const latitude = weatherData.get("latitude").replace(",",".");
     const longitude = weatherData.get("longitude").replace(",",".")
     let weatherInfo = await getCurrentWeather(latitude, longitude)
-    console.log(weatherInfo, latitude, longitude)
     let weatherTime = new Date(weatherInfo.dt * 1000)
     getMap([latitude, longitude], "Вы здесь")
     weatherContainer.style.display = 'flex';
@@ -47,11 +46,11 @@ weatherForm.addEventListener('submit', async (event) => {
 showMapButton.addEventListener('click', async (event) => {
     if (showMapButton.textContent === 'Показать на карте') {
         showMapButton.textContent = "Скрыть"
-        mapContainer.style.visibility = 'visible';
+        mapContainer.style.display = 'block';
     }
     else{
         showMapButton.textContent = "Показать на карте"
-        mapContainer.style.visibility = 'hidden';
+        mapContainer.style.display = 'none';
     }
 })
 
@@ -62,15 +61,3 @@ addButton.addEventListener('click', (event) => {
     weatherWidgets.querySelector(".add-widget").remove();
     weatherWidgets.querySelector(".show-map").remove();
 })
-
-// // 1. Создаем объект карты
-// const map = L.map('map').setView([56.7431, 60.8027], 13); // Используем координаты по умолчанию из формы
-//
-// // 2. Добавляем слой тайлов
-// L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-// }).addTo(map);
-//
-// // Опционально: Добавьте маркер на начальную точку
-// L.marker([56.7431, 60.8027]).addTo(map)
-//     .bindPopup("Екатеринбург").openPopup();

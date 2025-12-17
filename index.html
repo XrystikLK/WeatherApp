@@ -12,17 +12,21 @@
 </head>
 <body>
 
-<form class="weather-form">
-  <div>
-    <label for="latitude">Широта</label>
-    <input type="number" class="weather-input" name="latitude" id="latitude" step="any" min="-90" max="90" required>
-  </div>
-  <div>
-    <label for="longitude">Долгота</label>
-    <input type="number" class="weather-input" name="longitude" id="longitude" step="any" min="-180" max="180" required>
-  </div>
-  <input type="submit" value="Показать погоду">
-</form>
+<div class="flex">
+  <form class="weather-form">
+    <div>
+      <label for="latitude">Широта</label>
+      <input type="number" class="weather-input" name="latitude" id="latitude" step="any" min="-90" max="90" required>
+    </div>
+    <div>
+      <label for="longitude">Долгота</label>
+      <input type="number" class="weather-input" name="longitude" id="longitude" step="any" min="-180" max="180" required>
+    </div>
+    <input type="submit" value="Показать погоду">
+  </form>
+  <button class="add-widget" disabled>Добавить виджет</button>
+</div>
+
 <div class="weather-container">
   <div class="weather-info-block">
     <div class="weather-block-row">
@@ -37,7 +41,6 @@
       <p class="humidity">3123</p>
       <p class="wind-speed">31231</p>
     </div>
-    <button class="add-widget">+</button>
     <button class="show-map">Показать на карте</button>
   </div>
   <div class="weather-map-block">

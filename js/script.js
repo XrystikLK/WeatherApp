@@ -30,7 +30,8 @@ weatherForm.addEventListener('submit', async (event) => {
     const longitude = weatherData.get("longitude").replace(",",".")
     let weatherInfo = await getCurrentWeather(latitude, longitude)
     let weatherTime = new Date(weatherInfo.dt * 1000)
-    getMap([latitude, longitude], "Вы здесь")
+    getMap([latitude, longitude])
+    addButton.disabled = false;
     weatherContainer.style.display = 'flex';
     weatherContainer.style.flexDirection = 'column';
     weatherTemp.textContent = Math.round(weatherInfo.main.temp) + " °C";
@@ -58,6 +59,5 @@ showMapButton.addEventListener('click', async (event) => {
 addButton.addEventListener('click', (event) => {
     const newWidget = weatherContainer.cloneNode(true);
     weatherWidgets.appendChild(newWidget);
-    weatherWidgets.querySelector(".add-widget").remove();
     weatherWidgets.querySelector(".show-map").remove();
 })
